@@ -6,9 +6,9 @@ void cw_small_sort(t_stack *stack)
 	
 	max_index = cw_max_index(stack);
 	if (stack->top->next->index == max_index)
-		cw_rra(stack);
+		rra(stack);
 	else if(stack->top->index == max_index)
-		cw_ra(stack);
+		ra(stack);
 	if(stack->top->index > stack->top->next->index)
-		cw_sa(stack);
+		sa(stack);
 }
