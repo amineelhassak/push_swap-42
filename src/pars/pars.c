@@ -1,18 +1,15 @@
 #include "../../includes/headers.h"
 
-
-
-
-
-
 int cw_pars(t_stack *stack_a,int c,char **v)
 {
 	int			i;
 	int			j;
 	char		**str;
 	long		n;
+	int k;
 
 	j = 0;
+	k = 0;
 	if (c <= 2)
 		return 0;
 	else
@@ -22,7 +19,7 @@ int cw_pars(t_stack *stack_a,int c,char **v)
 			return 0;
 		while (i < c)
 		{
-			str = ft_split(v[i], ' ');
+			str = ft_split(v[i], ' ',&k);
 			j = 0;
 			while (str[j])
 			{
@@ -34,10 +31,10 @@ int cw_pars(t_stack *stack_a,int c,char **v)
 				cw_stack_add(stack_a, n);
 				j++;
 			}
-			free(str);
-			str = NULL;
+			cw_free(str,k);
 			i++;
 		}
+			exit(0);
 	}
 	if(!cw_n_double(stack_a))
 			return (0);

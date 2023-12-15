@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amel-has <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: b <b@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:08:10 by amel-has          #+#    #+#             */
-/*   Updated: 2023/11/03 18:09:22 by amel-has         ###   ########.fr       */
+/*   Updated: 2023/12/15 20:42:52 by b                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *str, char c)
+int	cw_count_words(char const *str, char c)
 {
 	int	index;
 	int	count;
@@ -54,7 +54,7 @@ static char	*get_word(const char *s, char c)
 	return (word);
 }
 
-static void	*ft_free(char **arr, int n)
+void	*cw_free(char **arr, int n)
 {
 	int	i;
 
@@ -65,15 +65,16 @@ static void	*ft_free(char **arr, int n)
 	return (0);
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c,int *k)
 {
 	char	**str;
 	int		i;
 
 	i = 0;
+	*k = (cw_count_words(s, c));
 	if (!s)
 		return (0);
-	str = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	str = (char **)malloc((*k + 1) * sizeof(char *));
 	if (!str)
 		return (0);
 	while (*s)
@@ -84,7 +85,7 @@ char	**ft_split(const char *s, char c)
 		{
 			str[i] = get_word(s, c);
 			if (!str[i])
-				return (ft_free(str, i));
+				return (cw_free(str, i));
 			while (*s && *s != c)
 				s++;
 			i++;

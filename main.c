@@ -14,5 +14,6 @@ int main(int ac, char **av)
         cw_sort_index(stack_a);
         cw_select_sort_methode(stack_a,stack_b);
     }
-    // cw_display(stack_a);
+    cw_clear_stack(stack_a);
+    free(stack_b);
 }

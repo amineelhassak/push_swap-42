@@ -13,7 +13,7 @@ static int cw_get_min(t_stack *stack)
 			min = tmp->value;
 		tmp = tmp->next;
 	}
-	return min;
+	return (min);
 }
 
 static int cw_next_min(t_stack *stack, int min)
@@ -25,7 +25,7 @@ static int cw_next_min(t_stack *stack, int min)
 	tmp = stack->top;
 	while(tmp)
 	{
-		if((tmp->index == 0) && tmp->value > min && tmp->value < next_min)
+		if ((tmp->index == 0) && tmp->value > min && tmp->value < next_min)
 				next_min = tmp->value;
 		tmp = tmp->next;
 	}

@@ -12,6 +12,8 @@
 // ------------------------creation-----------------------------------------
 t_stack *cw_c_stack();//
 t_node	*cw_c_node(int value);//
+void	*cw_free(char **arr, int n);
+int	    cw_count_words(char const *str, char c);
 // ------------------------pars-----------------------------------------
 bool	cw_check_all_numbers(char *str);//
 bool	cw_n_double(t_stack *stack);

@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "push_upper": "c",
-        "headers.h": "c"
+        "headers.h": "c",
+        "stdio.h": "c",
+        "unistd.h": "c",
+        "libft.h": "c"
     }
 }
