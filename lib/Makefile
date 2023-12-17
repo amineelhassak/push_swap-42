@@ -50,14 +50,14 @@ OBJS = $(SCRS:.c=.o)
 
 OBJSbb = $(SCRSbb:.c=.o)
 
-CC = @cc -Wall -Wextra -Werror
+CC = cc -Wall -Wextra -Werror
 
 AR = @ar rcs
 
 RM = @rm -f
 
 %.o : %.c libft.h
-	${CC} -c $< -o ${<:.c=.o}
+	$(CC) -c $< -o ${<:.c=.o}
 
 $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
