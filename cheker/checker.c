@@ -30,26 +30,32 @@ bool sort_by_arg(t_stack *stack_a,t_stack *stack_b)
     {
         if (!is_valide(str))
             return  (false);
-        if(!ft_strncmp(str, "rrb", 3))
+        if (!ft_strcmp(str, "rrb\n"))
             rrb(stack_b,0);
-        else if(!ft_strncmp(str, "rra", 3))
+        else if (!ft_strcmp(str, "rra\n"))
             rra(stack_a,0);
-        else if(!ft_strncmp(str, "rrr", 3))
+        else if( !ft_strcmp(str, "rrr\n"))
             rrr(stack_a, stack_b,0);
-        else if (!ft_strncmp(str , "ra",2))
+        else if (!ft_strcmp(str , "ra\n"))
             ra(stack_a,0);
-        else if (!ft_strncmp(str,"rb",2))
+        else if (!ft_strcmp(str,"rb\n"))
             rb(stack_b,0);
-        else if (!ft_strncmp(str, "rr", 2))
+        else if (!ft_strcmp(str, "rr\n"))
             rr(stack_a, stack_b,0);
-        else if(!ft_strncmp(str, "sa", 2))
+        else if(!ft_strcmp(str, "sa\n"))
             sa(stack_a,0);
-        else if(!ft_strncmp(str, "sb", 2))
-            sb(stack_b,0);
-        else if(!ft_strncmp(str,"ss",2))
+        else if (!ft_strcmp(str, "sb\n"))
+            sb (stack_b,0);
+        else if (!ft_strcmp(str,"ss\n"))
             ss(stack_a, stack_b, 0);
+        else if(!ft_strcmp(str,"pa\n"))
+            pa(stack_a,stack_b,0);
+        else if(!ft_strcmp(str,"pb\n"))
+            pb(stack_a,stack_b,0);
     }
-    if(!cw_is_sort(stack_a))
+    if (!stack_a->top)
+		return (false);
+    if (!cw_is_sort(stack_a))
         return (false);
     return (true);
 }

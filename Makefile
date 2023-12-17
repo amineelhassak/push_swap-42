@@ -25,17 +25,10 @@ CLEAN_LIB = @make clean -C ./lib
 FCLEAN_LIB = @make fclean -C ./lib
 PATHLIB_A = ./lib/libft.a
 
-all:color $(NAME) msg
+all:color $(NAME)
 
 color:
-	@echo "\033[0;32m"
-msg:
-	@echo "\n\n\n                                               ミ★---------->\              ★★★               /<------------ミ★"
-	@echo "                                                ミ★---------->\             ★★★              /<------------ミ★\n"
-	@echo "                                                 ミ★---------->\   s͢ u͢ c͢ c͢ e͢ s͢ s͢ f͢ u͢ l͢ l y  /<------------ミ★"
-	@echo "                                                  ミ★---------->\                          /<------------ミ★\n"
-	@echo "                                                   ミ★---------->\          ★★★           /<------------ミ★"
-	@echo "                                                    ミ★---------->\         ★★★          /<------------ミ★\n"
+	@echo "\033[0;32m➜"
 $(NAME): $(OBJS)
 	$(MAKELIB)
 	$(CC) ./main.c -o $(NAME) $(OBJS) $(PATHLIB_A)
