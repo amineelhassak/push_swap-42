@@ -7,7 +7,7 @@
 # include<limits.h>
 # include "stractus.h"
 # include "../lib/libft.h"
-# include "../get_next_line/get_next_line.h"
+# include "../get_next_linee/get_next_line.h"
 
 # define MSGERR "\033[0;91mERROR\033[0m"
 // ------------------------creation-----------------------------------------

@@ -10,7 +10,7 @@ SRCS = ./src/algo/big_sort.c ./src/algo/indexing.c ./src/algo/is_sort.c ./src/al
 		./src/operations/rrr.c ./src/operations/sa.c ./src/operations/sb.c ./src/operations/ss.c ./src/pars/atoi.c \
 		./src/pars/check.c ./src/pars/is_empty.c ./src/pars/is_spaces.c ./src/pars/n_double.c ./src/pars/pars.c
 
-SRCS_B = ./get_next_line/get_next_line_utils.c ./get_next_line/get_next_line.c ./cheker/checker.c
+SRCS_B = ./get_next_linee/get_next_line_utils.c ./get_next_linee/get_next_line.c ./cheker/checker.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
