@@ -6,4 +6,7 @@
 #include "../includes/headers.h"
 #include "../get_next_line/get_next_line.h"
 
+bool sort_by_arg(t_stack *stack_a,t_stack *stack_b);
+bool is_valide(char *move);
+int ft_strcmp(char *src,char *dst);
 #endif

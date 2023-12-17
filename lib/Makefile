@@ -50,7 +50,7 @@ OBJS = $(SCRS:.c=.o)
 
 OBJSbb = $(SCRSbb:.c=.o)
 
-CC = cc -Wall -Wextra -Werror
+CC = @cc -Wall -Wextra -Werror
 
 AR = @ar rcs
 
