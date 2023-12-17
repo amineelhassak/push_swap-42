@@ -1,8 +1,11 @@
 NAME = p_swap
 FX = push_swap
 SRCS = $(wildcard src/algo/*.c) $(wildcard src/allocation/*.c) $(wildcard src/instra/*.c)\
-		$(wildcard src/operations/*.c) $(wildcard src/pars/*.c)   $(wildcard *.c) $(wildcard src/position/*.c)
- 
+		$(wildcard src/operations/*.c) $(wildcard src/pars/*.c)   $(wildcard get_next_line/*.c)\
+		$(wildcard main.c)
+
+SRCS_B = $(wildcard cheker/*.c)
+CHECK = checker
 MAKE =@make
 OBJ = $(SRCS:.c=.o)
 BATHLIB = ./lib
@@ -13,20 +16,17 @@ CLAEBLIB =$(MAKE) clean -C $(BATHLIB) > /dev/null
 FCLAEBLIB =$(MAKE) fclean -C $(BATHLIB) > /dev/null
 RELIB = $(MAKE) re -C $(BATHLIB)
 MSGSUCC = "make successfully"
-CCFLAGC= cc -g -Wall -Wextra -Werror
+CCFLAGC= @cc -g -Wall -Wextra -Werror
 AR = @ar -rc
 RM = @rm -rf
+BATPUSH_S = ./push_swap
 all: $(NAME)
-
-$(NAME): makelib $(BATHHEADES)   succ
+$(NAME):makelib $(BATHHEADES)   succ 
 	$(CCFLAGC) $(SRCS) -o $(FX) $(BATHLIB_A)
-
-# 
-
-	
 succ:
-	echo $(MSGSUCC)
-# -----------------------libft------------------------
+	@echo $(MSGSUCC)
+bonus: $(NAME)
+	$(CCFLAGC) $(SRCS_B) $(BATHLIB_A) -o $(CHECK)
 makelib:
 	$(MAKELIB)
 cleanlib:

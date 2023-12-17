@@ -1,8 +1,9 @@
 #include "../../includes/headers.h"
 
-void rrr(t_stack *stack_a,t_stack *stack_b)
+void rrr(t_stack *stack_a,t_stack *stack_b,int check)
 {
 	cw_rroate(stack_a);
 	cw_rroate(stack_b);
-	ft_putendl_fd("rrr\n",1);
+	if (check)
+		ft_putendl_fd("rrr\n", 1);
 }

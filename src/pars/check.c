@@ -4,7 +4,7 @@ bool cw_check_all_numbers(char *str)
 {
 	int i  = 0;
 
-	if (str[i] == '-' || str[i]=='+')
+	if ((str[i] == '-' || str[i]=='+') &&  str[i+1] && ft_isdigit(str[i+1]))
 			i++;
 	while (str[i])
 	{

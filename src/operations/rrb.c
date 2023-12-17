@@ -1,7 +1,8 @@
 #include "../../includes/headers.h"
 
-void rrb(t_stack *stack)
+void rrb(t_stack *stack,int check)
 {
 	cw_rroate(stack);
-	ft_putendl_fd("rrb\n",1);
+	if (check)
+		ft_putendl_fd("rrb\n", 1);
 }

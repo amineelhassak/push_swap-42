@@ -1,7 +1,8 @@
 #include "../../includes/headers.h"
 
-void rb(t_stack *stack)
+void rb(t_stack *stack,int check)
 {
 	cw_rotate(stack);
-	ft_putendl_fd("rb\n",1);
+	if (check)
+		ft_putendl_fd("rb\n",1);
 }

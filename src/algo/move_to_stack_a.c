@@ -1,8 +1,8 @@
 #include "../../includes/headers.h"
 
-void cw_move_to_stack_a(t_stack *stack_a, t_stack *stack_b)
+void cw_move_to_stack_a(t_stack *stack_a, t_stack *stack_b)//
 {
-    int max_a;
+    int max_a;//
     int index;
     int check;
     
@@ -16,6 +16,6 @@ void cw_move_to_stack_a(t_stack *stack_a, t_stack *stack_b)
         else if(index == 1)
             cw_push_from_lo(stack_a, stack_b,max_a, &check);
         while (stack_a->tail->index == stack_a->top->index - 1)
-            rra(stack_a);
+            rra(stack_a,1);
     }
 }

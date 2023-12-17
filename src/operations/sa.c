@@ -1,7 +1,8 @@
 #include "../../includes/headers.h"
 
-void sa(t_stack *stack)
+void sa(t_stack *stack,int check)
 {
 	cw_swap(stack);
-	ft_putendl_fd("sa\n", 1);
+	if (check)
+		ft_putendl_fd("sa\n", 1);
 }

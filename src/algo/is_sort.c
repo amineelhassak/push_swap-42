@@ -12,10 +12,10 @@ bool cw_is_sort(t_stack *stack)
 		while (tmp2)
 		{
 			if (tmp2->value < tmp1->value)
-				return (0);
-			tmp2 = tmp2->next;
+				return (false);
+				tmp2 = tmp2->next;
 		}
 		tmp1 = tmp1->next;
 	}
-	return 1;
+	return true;
 }

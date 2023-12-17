@@ -6,14 +6,14 @@ void cw_push_from_lo(t_stack *stack_a, t_stack *stack_b, int max_a, int *check)
     {
         if (!*check || stack_b->top->index > stack_a->tail->index)
         {
-            pa(stack_a, stack_b);
-            ra(stack_a);
+            pa(stack_a, stack_b, 1);
+            ra(stack_a, 1);
             (*check) = 1;
         }
         else
-            rrb(stack_b);
+            rrb(stack_b, 1);
         if (stack_a->tail->index == max_a)
             (*check) = 0;
     }
-    pa(stack_a, stack_b);
+    pa(stack_a, stack_b, 1);
 }

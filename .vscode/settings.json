@@ -4,6 +4,8 @@
         "headers.h": "c",
         "stdio.h": "c",
         "unistd.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "libc.h": "c",
+        "stractus.h": "c"
     }
 }

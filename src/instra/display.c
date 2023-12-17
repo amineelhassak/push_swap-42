@@ -9,7 +9,7 @@ void cw_display(t_stack *stack)
 		return;
 	while (tmp)
 	{
-		printf("INDEX : %d  \n",tmp->index);
+		printf("INDEX : %d | VALUE :: %d \n",tmp->index, tmp->value);
 		tmp = tmp->next;
 	}
 }
