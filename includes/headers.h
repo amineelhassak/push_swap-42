@@ -9,13 +9,13 @@
 # include "../lib/libft.h"
 # include "../get_next_linee/get_next_line.h"
 
-# define MSGERR "\033[0;91mERROR\033[0m"
-// ------------------------creation-----------------------------------------
-t_stack *cw_c_stack();//
-t_node	*cw_c_node(int value);//
+# define MSGERR "\033[0;91mERROR\n\033[0m"
+
+t_stack *cw_c_stack();
+t_node	*cw_c_node(int value);
 void	*cw_free(char **arr, int n);
 int	    cw_count_words(char const *str, char c);
-// ------------------------pars-----------------------------------------
+
 bool	cw_check_all_numbers(char *str);//
 bool	cw_n_double(t_stack *stack);
 bool	cw_is_sort(t_stack *stack);

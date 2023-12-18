@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   indexing.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 01:31:00 by amel-has          #+#    #+#             */
+/*   Updated: 2023/12/18 01:32:09 by amel-has         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/headers.h"
 
-static int cw_get_min(t_stack *stack)
+static int	cw_get_min(t_stack *stack)
 {
-	int min;
-	t_node *tmp;
+	int		min;
+	t_node	*tmp;
 
 	tmp = stack->top;
 	min = INT_MAX;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->value < min)
 			min = tmp->value;
@@ -16,34 +28,34 @@ static int cw_get_min(t_stack *stack)
 	return (min);
 }
 
-static int cw_next_min(t_stack *stack, int min)
+static int	cw_next_min(t_stack *stack, int min)
 {
-	int next_min;
-	t_node *tmp;
-	
+	int		next_min;
+	t_node	*tmp;
+
 	next_min = INT_MAX;
 	tmp = stack->top;
-	while(tmp)
+	while (tmp)
 	{
 		if ((tmp->index == 0) && tmp->value > min && tmp->value < next_min)
-				next_min = tmp->value;
+			next_min = tmp->value;
 		tmp = tmp->next;
 	}
-	return next_min; 
+	return (next_min);
 }
 
-void cw_sort_index(t_stack *stack)
+void	cw_sort_index(t_stack *stack)
 {
-	t_node *tmp;
-	int min;
-	int i;
+	t_node	*tmp;
+	int		min;
+	int		i;
 
 	i = 1;
 	min = cw_get_min(stack);
-	while(min!= INT_MAX)
-	{	
+	while (min != INT_MAX)
+	{
 		tmp = stack->top;
-		while(tmp)
+		while (tmp)
 		{
 			if (tmp->value == min && tmp->index == 0)
 			{

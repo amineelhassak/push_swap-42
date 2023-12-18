@@ -1,9 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 14:29:02 by amel-has          #+#    #+#             */
+/*   Updated: 2023/12/18 15:06:51 by amel-has         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./includes/headers.h"
 
-// void v()
-// {
-//     system("leaks push_swap");
-// }`
 int main(int ac, char **av)
 {
     t_stack *stack_a;
@@ -11,12 +19,14 @@ int main(int ac, char **av)
 
     stack_a = cw_c_stack();
     if (!stack_a)
-        return (ft_putendl_fd(MSGERR, 2), 0);
+        return (ft_putendl_fd(MSGERR, 2), 1);
     stack_b = cw_c_stack();
     if (!stack_b)
-        return (ft_putendl_fd(MSGERR, 2), 0);
+        return (ft_putendl_fd(MSGERR, 2), 1);
     if (!cw_pars(stack_a,ac, av))
-            return (ft_putendl_fd(MSGERR, 2), 0);
+        return (ft_putendl_fd(MSGERR, 2), 1);
+    if (!cw_n_double(stack_a))
+		return (ft_putendl_fd(MSGERR, 2), 1);
     if (!cw_is_sort(stack_a))
     {
         cw_sort_index(stack_a);

@@ -1,20 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 14:35:02 by amel-has          #+#    #+#             */
+/*   Updated: 2023/12/18 14:37:56 by amel-has         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/headers.h"
 
-bool cw_check_all_numbers(char *str)
+bool	cw_check_all_numbers(char *s)
 {
-	int i  = 0;
+	int	i;
 
-	if ((str[i] == '-' || str[i]=='+') &&  str[i+1] && ft_isdigit(str[i+1]))
-			i++;
-	while (str[i])
-	{
-		if (!ft_isdigit((str[i++])))
-			return false;
-	}
 	i = 0;
-	while (str[i] == '0')
+	if ((s[i] == '-' || s[i] == '+') && s[i + 1] && ft_isdigit(s[i + 1]))
 		i++;
-	if (ft_strlen(str + i) > ft_strlen("+2147483647"))
-		exit(write(2, "ERROR\n", 6));
-	return true;
+	while (s[i])
+	{
+		if (!ft_isdigit((s[i++])))
+			return (false);
+	}
+	return (true);
 }

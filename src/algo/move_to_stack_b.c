@@ -1,15 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_to_stack_b.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 01:39:20 by amel-has          #+#    #+#             */
+/*   Updated: 2023/12/18 01:52:03 by amel-has         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/headers.h"
 
-void cw_move_to_stack_b(t_stack *stack_a, t_stack *stack_b)
+static void	cw_oxe(t_stack *stack_a, t_stack *stack_b)
 {
-	int index1 = stack_a->len / 3;
-	int index2 = stack_a->len / 6;
-	int save_last = 0;
-	/* int c =1;
-	// printf("\nIn Top %d :::[[%d      < ---%d--- >   %d]]\n",c,save_last,index2 - save_last,index2);
-	// printf("\nin Tail  %d :::[[ %d   	< --- %d --- >   %d]](len_res :: %d)\n",c,index2,index1-index2,index1,stack_a->len - index1);
-	// c++;
-	// int len = stack_a->len;*/
+	pb(stack_a, stack_b, 1);
+	rb(stack_b, 1);
+}
+
+void	cw_move_to_stack_b(t_stack *stack_a, t_stack *stack_b)
+{
+	int	index1;
+	int	index2;
+	int	save_last;
+
+	save_last = 0;
+	(1 == 1) && (index2 = stack_a->len / 6, index1 = stack_a->len / 3);
 	while (stack_a->len != 3)
 	{
 		if (stack_a->top->index < index1)
@@ -17,36 +33,29 @@ void cw_move_to_stack_b(t_stack *stack_a, t_stack *stack_b)
 			if (stack_a->top->index < index2)
 				pb(stack_a, stack_b, 1);
 			else
-			{
-				pb(stack_a, stack_b, 1);
-				rb(stack_b, 1);
-			}
+				cw_oxe(stack_a, stack_b);
 		}
 		else
 			ra(stack_a, 1);
 		if (index1 - 1 == stack_b->len)
-		{	
-				save_last = index1;
-				index1 += stack_a-> len / 3;
-				index2 = stack_a-> len / 6 + save_last;
-				// printf("\n\n\nin ToP   %d :::[[%d      < --- %d --- >   %d]]\n",c,save_last,index2 - save_last,index2);
-				// printf("\nin Tail  %d :::[[ %d   	< --- %d --- >   %d]](len_res :: %d)\n",c,index2,index1-index2,index1,len-index1);
-				// c++;
+		{
+			(1 == 1) && (save_last = index1, index1 += stack_a-> len / 3);
+			index2 = stack_a-> len / 6 + save_last;
 		}
 	}
 }
 
-void	cw_move_mid_stack_b(t_stack *stack_a,t_stack *stack_b)
+void	cw_move_mid_stack_b(t_stack *stack_a, t_stack *stack_b)
 {
-    int     len;
+	int	len;
 
 	len = stack_a->len;
-    while (len > 0)
-    {
-        if (stack_a->top->index < 3)
-            pb (stack_a, stack_b, 1);
-        else
-            ra (stack_a, 1);
+	while (len > 0)
+	{
+		if (stack_a->top->index < 3)
+			pb (stack_a, stack_b, 1);
+		else
+			ra (stack_a, 1);
 		len--;
-    }
+	}
 }

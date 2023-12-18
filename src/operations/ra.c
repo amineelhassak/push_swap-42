@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ra.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 02:16:05 by amel-has          #+#    #+#             */
+/*   Updated: 2023/12/18 02:16:36 by amel-has         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/headers.h"
 
-void ra(t_stack *stack,int check)
+void	ra(t_stack *stack, int check)
 {
 	cw_rotate(stack);
 	if (check)
-		ft_putendl_fd("ra\n",1);	
+		ft_putendl_fd("ra\n", 1);
 }

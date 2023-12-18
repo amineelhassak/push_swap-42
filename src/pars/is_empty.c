@@ -1,15 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_empty.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 14:38:45 by amel-has          #+#    #+#             */
+/*   Updated: 2023/12/18 14:39:41 by amel-has         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/headers.h"
 
-int cw_is_empty(char **av)
+int	cw_is_empty(char **av)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (av[i])
 	{
 		if (av[i][0] == '\0')
-			return 0;
+			return (0);
 		if (cw_is_spaces(av[i]))
-			return 0;
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }

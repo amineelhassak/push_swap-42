@@ -6,6 +6,8 @@
         "unistd.h": "c",
         "libft.h": "c",
         "libc.h": "c",
-        "stractus.h": "c"
+        "stractus.h": "c",
+        "checker.h": "c",
+        "sstream": "c"
     }
 }
