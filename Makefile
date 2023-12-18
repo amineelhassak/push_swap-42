@@ -10,7 +10,13 @@ SRCS = ./src/algo/big_sort.c ./src/algo/indexing.c ./src/algo/is_sort.c ./src/al
 		./src/operations/rrr.c ./src/operations/sa.c ./src/operations/sb.c ./src/operations/ss.c ./src/pars/atoi.c \
 		./src/pars/check.c ./src/pars/is_empty.c ./src/pars/is_spaces.c ./src/pars/n_double.c ./src/pars/pars.c
 
-SRCS_B = ./get_next_linee/get_next_line_utils.c ./get_next_linee/get_next_line.c ./cheker/checker.c
+SRCS_B = ./get_next_linee/get_next_line_utils.c ./get_next_linee/get_next_line.c ./cheker/checker.c \
+		./src/allocation/free.c ./src/instra/push.c ./src/instra/rev_rotate.c ./src/allocation/allocation.c ./src/algo/is_sort.c\
+		./src/instra/rotate.c ./src/instra/stack_add.c ./src/instra/swap.c ./src/operations/pa.c ./src/operations/pb.c \
+		./src/operations/ra.c ./src/operations/rb.c ./src/operations/rr.c ./src/operations/rra.c ./src/operations/rrb.c \
+		./src/operations/rrr.c ./src/operations/sa.c ./src/operations/sb.c ./src/operations/ss.c ./src/pars/atoi.c \
+		./src/pars/check.c ./src/pars/is_empty.c ./src/pars/is_spaces.c ./src/pars/n_double.c ./src/pars/pars.c \
+
 
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
@@ -33,8 +39,9 @@ $(NAME): $(OBJS)
 	$(MAKELIB)
 	$(CC) ./main.c -o $(NAME) $(OBJS) $(PATHLIB_A)
 
-bonus:color $(OBJS_B) $(NAME)
-	$(CC) ./cheker/main.c -o $(CHECK) $(OBJS_B) $(OBJS) $(PATHLIB_A)
+bonus:color $(OBJS_B)
+	$(MAKELIB)
+	$(CC) ./cheker/main.c -o $(CHECK) $(OBJS_B) $(PATHLIB_A)
 
 %.o: %.c
 	$(CC) -c $< -o $@

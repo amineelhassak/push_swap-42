@@ -6,7 +6,7 @@
 /*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:16:56 by amel-has          #+#    #+#             */
-/*   Updated: 2023/12/18 17:48:11 by amel-has         ###   ########.fr       */
+/*   Updated: 2023/12/18 19:40:34 by amel-has         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "../lib/libft.h"
 # include "../get_next_linee/get_next_line.h"
 
-# define MSGERR "\033[0;91mERROR\n\033[0m"
+# define MSGERR "\033[0;91mError\n\033[0m"
 
 t_stack	*cw_c_stack(void);
 t_node	*cw_c_node(int value);
