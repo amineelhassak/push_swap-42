@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: b <b@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:08:10 by amel-has          #+#    #+#             */
-/*   Updated: 2023/12/15 20:42:52 by b                ###   ########.fr       */
+/*   Updated: 2023/12/18 18:38:46 by amel-has         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	*cw_free(char **arr, int n)
 	return (0);
 }
 
-char	**ft_split(const char *s, char c,int *k)
+char	**ft_split(const char *s, char c, int *k)
 {
 	char	**str;
 	int		i;
@@ -91,6 +91,5 @@ char	**ft_split(const char *s, char c,int *k)
 			i++;
 		}
 	}
-	str[i] = NULL;
-	return (str);
+	return (str[i] = NULL, str);
 }

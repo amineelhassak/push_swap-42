@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amel-has <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:55:52 by amel-has          #+#    #+#             */
-/*   Updated: 2023/11/03 18:12:33 by amel-has         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:25:53 by amel-has         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (us[i] == uc) 
+		if (us[i] == uc)
 		{
 			return ((void *)(us + i));
 		}

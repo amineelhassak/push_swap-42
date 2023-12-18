@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amel-has <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:28:09 by amel-has          #+#    #+#             */
-/*   Updated: 2023/11/03 22:28:50 by amel-has         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:25:38 by amel-has         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 			n--;
 		}
 	}
-	else 
+	else
 	{
 		while (n > 0)
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amel-has <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 04:47:17 by amel-has          #+#    #+#             */
-/*   Updated: 2023/11/04 04:49:31 by amel-has         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:14:56 by amel-has         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr(set, s1[n]) && s1[n])
 		n--;
 	size = n - i + 1;
-	return (ft_substr(s1, i, size)); 
+	return (ft_substr(s1, i, size));
 }
 /*
 int main()

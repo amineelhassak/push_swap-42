@@ -4,7 +4,7 @@ CHECK = checker
 SRCS = ./src/algo/big_sort.c ./src/algo/indexing.c ./src/algo/is_sort.c ./src/algo/max_index.c ./src/algo/mid_sort.c \
 		./src/algo/move_to_stack_a.c ./src/algo/move_to_stack_b.c ./src/algo/PlanSort.c ./src/algo/push_lower.c \
 		./src/algo/push_upper.c ./src/algo/search_position_max.c ./src/algo/small_sort.c ./src/allocation/allocation.c \
-		./src/allocation/free.c ./src/instra/display.c ./src/instra/pop.c ./src/instra/push.c ./src/instra/rev_rotate.c \
+		./src/allocation/free.c ./src/instra/push.c ./src/instra/rev_rotate.c \
 		./src/instra/rotate.c ./src/instra/stack_add.c ./src/instra/swap.c ./src/operations/pa.c ./src/operations/pb.c \
 		./src/operations/ra.c ./src/operations/rb.c ./src/operations/rr.c ./src/operations/rra.c ./src/operations/rrb.c \
 		./src/operations/rrr.c ./src/operations/sa.c ./src/operations/sb.c ./src/operations/ss.c ./src/pars/atoi.c \
@@ -33,7 +33,7 @@ $(NAME): $(OBJS)
 	$(MAKELIB)
 	$(CC) ./main.c -o $(NAME) $(OBJS) $(PATHLIB_A)
 
-bonus: $(OBJS_B) $(NAME)
+bonus:color $(OBJS_B) $(NAME)
 	$(CC) ./cheker/main.c -o $(CHECK) $(OBJS_B) $(OBJS) $(PATHLIB_A)
 
 %.o: %.c

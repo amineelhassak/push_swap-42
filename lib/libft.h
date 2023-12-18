@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: b <b@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:20:01 by amel-has          #+#    #+#             */
-/*   Updated: 2023/12/15 20:40:07 by b                ###   ########.fr       */
+/*   Updated: 2023/12/18 17:14:22 by amel-has         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+
 typedef struct s_list
 {
 	void			*content;
@@ -29,7 +30,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-char	**ft_split(const char *s, char c,int *k);
+char	**ft_split(const char *s, char c, int *k);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstadd_back(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
