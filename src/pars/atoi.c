@@ -3,27 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   atoi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
+/*   By: b <b@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 14:44:10 by amel-has          #+#    #+#             */
-/*   Updated: 2023/12/18 20:20:28 by amel-has         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:19:16 by b                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
 
-static int	ox_check(const char *str, int *i)
+// static int	ox_check(const char *str, int *i)
+// {
+// 	while (str[*i] == '0')
+// 		(*i)++;
+// 	if (!str[(*i)])
+// 		return (2);
+// 	
+// 	return (0);
+// }
+int all_zero(char *str)
 {
-	while (str[*i] == '0')
-		(*i)++;
-	if (!str[(*i)])
-		return (2);
-	if (ft_strlen(&str[(*i)]) > ft_strlen("+2147483647"))
-		return (1);
-	return (0);
+	int i = 0;
+	while (str[i])
+	{
+		if(str[i] != '0')
+			return 0;
+		i++;
+	}
+	return (1);
+	
 }
 
-long	cw_atoi(const char *str)
+long	cw_atoi(char *str)
 {
 	int		s;
 	size_t	r;
@@ -39,9 +50,11 @@ long	cw_atoi(const char *str)
 			s *= -1;
 		i++;
 	}
-	x = ox_check(&str[i], &i);
-	if (x == 2)
+	// x = ox_check(&str[i], &i);
+	if (all_zero(&str[i]))
 		return (0);
+	if (ft_strlen(&str[(i)]) > ft_strlen("+2147483648"))
+		return 2147483648;
 	while (*str && (*(str + i) >= '0' && *(str + i) <= '9') && *(str + i))
 		r = r * 10 + str[i++] - '0';
 	if ((r > INT_MAX && s == 1) || x == 1)

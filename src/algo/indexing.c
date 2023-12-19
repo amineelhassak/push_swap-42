@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   indexing.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
+/*   By: b <b@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 01:31:00 by amel-has          #+#    #+#             */
-/*   Updated: 2023/12/18 01:32:09 by amel-has         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:23:29 by b                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
 
-static int	cw_get_min(t_stack *stack)
+static long	cw_get_min(t_stack *stack)
 {
-	int		min;
+	long		min;
 	t_node	*tmp;
 
 	tmp = stack->top;
-	min = INT_MAX;
+	min = 2147483648;
 	while (tmp)
 	{
 		if (tmp->value < min)
@@ -28,12 +28,12 @@ static int	cw_get_min(t_stack *stack)
 	return (min);
 }
 
-static int	cw_next_min(t_stack *stack, int min)
+static long	cw_next_min(t_stack *stack, int min)
 {
-	int		next_min;
+	long		next_min;
 	t_node	*tmp;
 
-	next_min = INT_MAX;
+	next_min = 2147483648;
 	tmp = stack->top;
 	while (tmp)
 	{
@@ -47,12 +47,12 @@ static int	cw_next_min(t_stack *stack, int min)
 void	cw_sort_index(t_stack *stack)
 {
 	t_node	*tmp;
-	int		min;
+	long	min;
 	int		i;
 
 	i = 1;
 	min = cw_get_min(stack);
-	while (min != INT_MAX)
+	while (min != 2147483648)
 	{
 		tmp = stack->top;
 		while (tmp)
