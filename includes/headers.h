@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   headers.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: b <b@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:16:56 by amel-has          #+#    #+#             */
-/*   Updated: 2023/12/19 18:09:57 by b                ###   ########.fr       */
+/*   Updated: 2023/12/18 21:24:45 by amel-has         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		cw_count_words(char const *str, char c);
 bool	cw_check_all_numbers(char *str);
 bool	cw_n_double(t_stack *stack);
 bool	cw_is_sort(t_stack *stack);
-long	cw_atoi(char *str);
+long	cw_atoi(const char *str);
 int		cw_is_empty(char **av);
 int		cw_is_spaces(char *str);
 void	cw_stack_add(t_stack *stack, int value);

@@ -6,7 +6,7 @@
 /*   By: amel-has <amel-has@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 01:26:36 by amel-has          #+#    #+#             */
-/*   Updated: 2023/12/18 18:29:12 by amel-has         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:06:39 by amel-has         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,34 @@ int	ft_strcmp(char *src, char *dst)
 	return ((*src) - (*dst));
 }
 
-static void	ox_sec_checker(char *str, t_stack *stack_a, t_stack *stack_b)
+static int	ox_sec_checker(char *str, t_stack *stack_a, t_stack *stack_b)
 {
 	if (!ft_strcmp(str, "rrb\n"))
-		rrb(stack_b, 0);
+		return (rrb(stack_b, 0), 1);
 	else if (!ft_strcmp(str, "rra\n"))
-		rra(stack_a, 0);
+		return (rra(stack_a, 0), 1);
 	else if (!ft_strcmp(str, "rrr\n"))
-		rrr(stack_a, stack_b, 0);
+		return (rrr(stack_a, stack_b, 0), 1);
 	else if (!ft_strcmp(str, "ra\n"))
-		ra(stack_a, 0);
+		return (ra(stack_a, 0), 1);
 	else if (!ft_strcmp(str, "rb\n"))
-		rb(stack_b, 0);
+		return (rb(stack_b, 0), 1);
+	else if (!ft_strcmp(str, "rr\n"))
+		return (rr(stack_a, stack_b, 0), 1);
+	else if (!ft_strcmp(str, "sa\n"))
+		return (sa(stack_a, 0), 1);
+	return (0);
 }
 
 static void	ox_checker(char *str, t_stack *stack_a, t_stack *stack_b, int *in)
 {
+	int	n;
+
 	while (str)
 	{
-		ox_sec_checker(str, stack_a, stack_b);
-		if (!ft_strcmp(str, "rr\n"))
-			rr(stack_a, stack_b, 0);
-		else if (!ft_strcmp(str, "sa\n"))
-			sa(stack_a, 0);
-		else if (!ft_strcmp(str, "sb\n"))
+		n = 0;
+		n = ox_sec_checker(str, stack_a, stack_b);
+		if (!ft_strcmp(str, "sb\n"))
 			sb (stack_b, 0);
 		else if (!ft_strcmp(str, "ss\n"))
 			ss(stack_a, stack_b, 0);
@@ -53,7 +57,7 @@ static void	ox_checker(char *str, t_stack *stack_a, t_stack *stack_b, int *in)
 			pa(stack_a, stack_b, 0);
 		else if (!ft_strcmp(str, "pb\n"))
 			pb(stack_a, stack_b, 0);
-		else
+		else if (n == 0)
 		{
 			*in = 1;
 			exit(write(2, "Error\n", 6));
