@@ -144,7 +144,7 @@ push_swap-42/
    ```
 2. **Check with checker:**
    ```bash
-   ./push_swap 2 1 3 6 5 8 | ./cheker/checker 2 1 3 6 5 8
+     ./push_swap 3 2 1 6 5 8 | ./checker 3 2 1 6 5 8
    ```
 
 ### Automated Testing
