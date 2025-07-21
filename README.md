@@ -10,7 +10,7 @@
 
 # 🧩 push_swap
 
-> A fast and efficient sorting algorithm visualizer and checker for the 42 School project.
+> A fast and efficient sorting algorithm and checker for the 42 School project.
 
 **Sort stacks with the fewest possible operations!**
 
@@ -46,7 +46,6 @@ The project is a test of algorithmic thinking, optimization, and mastery of data
 - **Checker program** to validate operation sequences
 - **Input validation** (duplicates, non-integers, empty input)
 - **Custom memory management**
-- **Bonus**: Python visualizer for step-by-step operation display
 
 ### Supported Operations
 - `sa`, `sb`, `ss`: Swap the top two elements of stack A, B, or both
@@ -59,7 +58,6 @@ The project is a test of algorithmic thinking, optimization, and mastery of data
 ### Prerequisites
 - **C compiler** (GCC or Clang)
 - **Make**
-- **Python 3** (for the visualizer, with Tkinter)
 
 ### Build the Project
 
@@ -110,19 +108,6 @@ This will output the sequence of operations to sort the stack.
 
 The checker will output `OK` if the stack is sorted, or `KO` otherwise.
 
-### Visualizing the Sorting Process
-
-A Python visualizer is included for step-by-step visualization:
-
-```bash
-python3 visualizer.py 3 2 1 6 5 8
-```
-
-> **Note:** You need Python 3 and Tkinter installed. On macOS, you can install with:
-> ```bash
-> brew install python3
-> ```
-
 ## 📁 Project Structure
 
 ```
@@ -140,7 +125,6 @@ push_swap-42/
 ├── cheker/                 # Checker program
 ├── get_next_linee/         # get_next_line utility
 ├── lib/                    # Custom libft library
-├── visualizer.py           # Python visualizer
 ├── Makefile                # Build configuration
 └── README.md               # This file
 ```
@@ -149,8 +133,6 @@ push_swap-42/
 
 - **C** (C99)
 - **Make**
-- **Python 3** (visualizer)
-- **Tkinter** (visualizer GUI)
 
 ## 🧪 Testing
 
@@ -163,10 +145,6 @@ push_swap-42/
 2. **Check with checker:**
    ```bash
    ./push_swap 2 1 3 6 5 8 | ./cheker/checker 2 1 3 6 5 8
-   ```
-3. **Visualize:**
-   ```bash
-   python3 visualizer.py 2 1 3 6 5 8
    ```
 
 ### Automated Testing
